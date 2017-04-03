@@ -26,8 +26,15 @@ permalink: /resources/
 
 
   * [Pandas Library Main Page](http://pandas.pydata.org/)
+  * [API documentation](http://pandas.pydata.org/pandas-docs/stable/api.html)
   * [Pandas Documentation](http://pandas.pydata.org/pandas-docs/stable/)
+  * [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/dsintro.html)
 
 ### General Data Science Resources
 
   * [50+ Data Science Cheat Sheets - KDnuggets](http://www.kdnuggets.com/2015/07/good-data-science-machine-learning-cheat-sheets.html)
+
+
+### Open Refine
+
+  * [Installation-Instructions](https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions)
