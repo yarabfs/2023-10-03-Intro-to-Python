@@ -41,7 +41,7 @@ numeric ranges or specific x,y index locations.
 
 ## Selecting Data Using Labels (Column Headings)
 
-We use square brackets `[]` to select a subset of an Python object. For example,
+We use square brackets `[]` to select a subset of a Python object. For example,
 we can select all of data from a column named `species_id` from the `surveys_df`
 DataFrame by name:
 
@@ -308,8 +308,8 @@ data.
 ```python
 # Challenge 1.
 # Select a subset of rows in `surveys_df` with
-# year > 1999 and weight values less than or equal to 8
-surveys_df[(surveys_df.year > 1999) & (surveys_df.weight <= 8)].describe()
+# year == 1999 and weight values less than or equal to 8
+surveys_df[(surveys_df.year == 1999) & (surveys_df.weight <= 8)]
 
 # Challenge 2. Use isin command
 # `surveys_df[surveys_df['species_id'].isin([listGoesHere])]`
@@ -428,17 +428,22 @@ new_df.head()
 new_df.sex='x'
 new_df.head()
 # count null values
-new_df.isnull().sum()
-# null values
-new_df.isnull().any()
-new_df.isnull().any(axis=1)
+pd.isnull(new_df).sum()
+pd.isnull(new_df).sum().sum()
+
+# find where null values are
+pd.isnull(new_df).any()
+pd.isnull(new_df).any(axis=1)
 
 # 2. Create a new DataFrame that contains only observations that are of sex male
 # or female and where weight values are greater than 0. Create a stacked bar
 # plot of average weight by plot with male vs female values stacked for each
 # plot.
-new_df2 = surveys_df[((surveys_df['sex']=='M') | (surveys_df['sex']=='F')) & ((surveys_df['weight'] >= 0))].copy()
+new_df2 = surveys_df[((surveys_df['sex']=='M') | (surveys_df['sex']=='F')) & ((surveys_df['weight'] > 0))].copy()
 new_df2.head()
+
+# or
+new_df3=surveys_df[(surveys_df['sex'].isin(['M','F']) & (surveys_df['weight'] > 0))].copy()
 
 by_plot_sex = new_df2.groupby(['plot_id','sex'])
 plot_sex_count = by_plot_sex['weight'].mean()
