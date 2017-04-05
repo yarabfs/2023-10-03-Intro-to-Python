@@ -29,6 +29,7 @@ permalink: /resources/
   * [API documentation](http://pandas.pydata.org/pandas-docs/stable/api.html)
   * [Pandas Documentation](http://pandas.pydata.org/pandas-docs/stable/)
   * [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/dsintro.html)
+  * [Handling missing data](https://www.oreilly.com/learning/handling-missing-data)
 
 ### General Data Science Resources
 
