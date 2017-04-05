@@ -12,6 +12,7 @@ permalink: /resources/
   * [Python Package Index](https://pypi.python.org/pypi)
   * [Python Download Page](https://www.python.org/downloads/)
   * [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+  * [Matplotlib Gallery](http://matplotlib.org/gallery.html)
 
 ### Anaconda
 
@@ -46,4 +47,4 @@ permalink: /resources/
   * [Think Python](http://greenteapress.com/wp/think-python/)
   * [Dive Into Python](http://www.diveintopython.net/)
   * [A Whirlwind Tour of Python](https://www.oreilly.com/learning/a-whirlwind-tour-of-python)
-  
+
