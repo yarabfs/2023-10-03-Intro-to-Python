@@ -11,6 +11,7 @@ permalink: /resources/
   * [Python Software Foundation Webpage](https://www.python.org/)
   * [Python Package Index](https://pypi.python.org/pypi)
   * [Python Download Page](https://www.python.org/downloads/)
+  * [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 
 ### Anaconda
 
@@ -43,3 +44,6 @@ permalink: /resources/
 ### Tutorials
   * [Google Python Class](https://developers.google.com/edu/python/)
   * [Think Python](http://greenteapress.com/wp/think-python/)
+  * [Dive Into Python](http://www.diveintopython.net/)
+  * [A Whirlwind Tour of Python](https://www.oreilly.com/learning/a-whirlwind-tour-of-python)
+  
