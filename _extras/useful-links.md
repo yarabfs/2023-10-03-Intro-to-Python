@@ -38,3 +38,7 @@ permalink: /resources/
 ### Open Refine
 
   * [Installation-Instructions](https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions)
+  
+### Tutorials
+  * [Google Python Class](https://developers.google.com/edu/python/)
+  * [Think Python](http://greenteapress.com/wp/think-python/)
