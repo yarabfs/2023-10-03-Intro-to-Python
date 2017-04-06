@@ -50,6 +50,7 @@ Specifically, the data files we use in these lessons are:
 
 - [surveys.csv](https://ndownloader.figshare.com/files/2292172)
 - [species.csv](https://ndownloader.figshare.com/files/3299483)
+- [surveys_complete.csv](https://github.com/TheJacksonLaboratory/python-ecology-lesson/raw/gh-pages/data_output/surveys_complete.csv)
 
 
 ## Requirements

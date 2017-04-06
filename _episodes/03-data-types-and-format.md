@@ -1,7 +1,7 @@
 ---
 title: Data Types and Formats
-teaching: 0
-exercises: 0
+teaching: 25
+exercises: 5
 objectives:
     - Describe how information is stored in a Python DataFrame.
     - "Define the two main types of data in Python: characters and numerics."
@@ -33,24 +33,25 @@ this lesson: numeric and character types.
 
 Numeric data types include integers and floats. A **floating point** (known as a
 float) number has decimal points even if that decimal point value is 0. For
-example: 1.13, 2.0 1234.345. If we have a column that contains both integers and
-floating point numbers, Pandas will assign the entire column to the float data
-type so the decimal points are not lost.
+example: `1.13`, `2.0`, `1234.345`. If we have a column that contains both integers and
+floating point numbers,
 
-An **integer** will never have a decimal point. Thus if we wanted to store 1.13 as 
-an integer it would be stored as 1. Similarly, 1234.345 would be stored as 1234. You 
-will often see the data type `Int64` in python which stands for 64 bit integer. The 64 
-simply refers to the memory allocated to store data in each cell which effectively 
-relates to how many digits it can store in each "cell". Allocating space ahead of time 
+> **Pandas will assign the entire column to the float data type so the decimal points are not lost.**
+
+An **integer** will never have a decimal point. Thus if we wanted to store `1.13` as
+an integer it would be stored as 1. Similarly, `1234.345` would be stored as `1234`. You
+will often see the data type `Int64` in python which stands for 64 bit integer. The 64
+simply refers to the memory allocated to store data in each cell which effectively
+relates to how many digits it can store in each "cell". Allocating space ahead of time
 allows computers to optimize storage and processing efficiency.
 
 ## Character Data Types
 
-Strings, known as Objects in Pandas, are values that contain numbers and / or
+Strings, known as Objects in Pandas, are values that contain numbers and/or
 characters. For example, a string might be a word, a sentence, or several
-sentences. A Pandas object might also be a plot name like 'plot1'. A string can
-also contain or consist of numbers. For instance, '1234' could be stored as a
-string. As could '10.23'. However **strings that contain numbers can not be used
+sentences. A Pandas object might also be a plot name like `plot1`. A string can
+also contain or consist of numbers. For instance, `1234` could be stored as a
+string. As could `10.23`. However **strings that contain numbers can not be used
 for mathematical operations**!
 
 Pandas and base Python use slightly different names for data types. More on this
@@ -58,10 +59,10 @@ is in the table below:
 
 | Pandas Type | Native Python Type | Description |
 |-------------|--------------------|-------------|
-| object | string | The most general dtype. Will be assigned to your column if column has mixed types (numbers and strings). |
-| int64  | int | Numeric characters. 64 refers to the memory allocated to hold this character. |
-| float64 | float | Numeric characters with decimals. If a column contains numbers and NaNs(see below), pandas will default to float64, in case your missing value has a decimal. |
-| datetime64, timedelta[ns] | N/A (but see the [datetime] module in Python's standard library) | Values meant to hold time data. Look into these for time series experiments. |
+| `object` | `string` | The most general dtype. Will be assigned to your column if column has mixed types (numbers and strings). |
+| `int64`  | `int` | Numeric characters. 64 refers to the memory allocated to hold this character. |
+| `float64` | `float` | Numeric characters with decimals. If a column contains numbers and NaNs(see below), pandas will default to float64, in case your missing value has a decimal. |
+| `datetime64`, timedelta[ns] | `N/A` (but see the [datetime] module in Python's standard library) | Values meant to hold time data. Look into these for time series experiments. |
 
 [datetime]: http://doc.python.org/2/library/datetime.html
 
@@ -69,7 +70,7 @@ is in the table below:
 ## Checking the format of our data
 
 Now that we're armed with a basic understanding of numeric and character data
-types, let's explore the format of our survey data. We'll be working with the 
+types, let's explore the format of our survey data. We'll be working with the
 same `surveys.csv` dataset that we've used in previous lessons.
 
 ```python
@@ -151,7 +152,7 @@ print(24-4)
 
 If we divide one integer by another, we get a float.
 The result on python 3 is different than in python 2, where the result is an
-integer (integer division). 
+integer (integer division).
 
 ```python
 print(5/9)
@@ -201,7 +202,7 @@ Notice that this throws a value error: `ValueError: Cannot convert NA to
 integer`. If we look at the `weight` column in the surveys data we notice that
 there are NaN (**N**ot **a** **N**umber) values. *NaN* values are undefined
 values that cannot be represented mathematically. Pandas, for example, will read
-an empty cell in a CSV or Excel sheet as a NaN. NaNs have some desirable
+an empty cell in a CSV or Excel sheet as a `NaN`. NaNs have some desirable
 properties: if we were to average the `weight` column without replacing our NaNs,
 Python would know to skip over those cells.
 
@@ -210,27 +211,27 @@ surveys_df['weight'].mean()
 42.672428212991356
 ```
 
-## Missing Data Values - NaN
+## Missing Data Values - `NaN`
 
 Dealing with missing data values is always a challenge. It's sometimes hard to
 know why values are missing - was it because of a data entry error? Or data that
-someone was unable to collect? Should the value be 0? We need to know how
+someone was unable to collect? Should the value be `0`? We need to know how
 missing values are represented in the dataset in order to make good decisions.
 If we're lucky, we have some metadata that will tell us more about how null
 values were handled.
 
 For instance, in some disciplines, like Remote Sensing, missing data values are
-often defined as -9999. Having a bunch of -9999 values in your data could really
+often defined as `-9999`. Having a bunch of `-9999` values in your data could really
 alter numeric calculations. Often in spreadsheets, cells are left empty where no
 data are available. Pandas will, by default, replace those missing values with
-NaN. However it is good practice to get in the habit of intentionally marking
+`NaN`. However it is good practice to get in the habit of intentionally marking
 cells that have no data, with a no data value! That way there are no questions
 in the future when you (or someone else) explores your data.
 
 ### Where Are the NaN's?
 
 Let's explore the NaN values in our data a bit further. Using the tools we
-learned in lesson 02, we can figure out how many rows contain NaN values for
+learned in lesson 02, we can figure out how many rows contain `NaN` values for
 weight. We can also create a new subset from our data that only contains rows
 with weight values > 0 (ie select meaningful weight values):
 
@@ -276,10 +277,25 @@ Python gives us all of the tools that we need to account for these issues. We
 just need to be cautious about how the decisions that we make impact scientific
 results.
 
-### Challenge 
-Count the number of missing values per column. Hint: The method .count() gives you 
+### Challenge
+Count the number of missing values per column. Hint: The method .count() gives you
 the number of non-NA observations per column.
 
+```python
+# Investigate size, count() and len
+
+# number of elements in the NDFrame
+surveys_df.size
+
+# df.count() Return Series with number of non-NA/null observations over requested axis.
+# Works with non-floating point data as well (detects NaN and None)
+surveys_df.count()
+
+# len() Return the number of items in a container.
+len(surveys_df)
+surveys_df['record_id'].size - surveys_df.count()
+len(surveys_df) - surveys_df.count()
+```
 
 ## Recap
 

@@ -1,7 +1,7 @@
 ---
 title: Indexing, Slicing and Subsetting DataFrames in Python
-teaching: 0
-exercises: 0
+teaching: 40
+exercises: 20
 objectives:
     - Describe what 0-based indexing is.
     - Manipulate and extract data using column headings and index locations.
@@ -41,7 +41,7 @@ numeric ranges or specific x,y index locations.
 
 ## Selecting Data Using Labels (Column Headings)
 
-We use square brackets `[]` to select a subset of an Python object. For example,
+We use square brackets `[]` to select a subset of a Python object. For example,
 we can select all of data from a column named `species_id` from the `surveys_df`
 DataFrame by name:
 
@@ -127,8 +127,8 @@ surveys_df[:5]
 surveys_df[-1:]
 ```
 
-We can also reassign values within subsets of our DataFrame. But before we do that, let's make a 
-copy of our DataFrame so as not to modify our original imported data. 
+We can also reassign values within subsets of our DataFrame. But before we do that, let's make a
+copy of our DataFrame so as not to modify our original imported data.
 
 ```python
 # copy the surveys dataframe so we don't modify the original DataFrame
@@ -138,7 +138,7 @@ surveys_copy = surveys_df
 surveys_copy[0:3] = 0
 ```
 
-Next, try the following code: 
+Next, try the following code:
 
 ```python
 surveys_copy.head()
@@ -147,10 +147,10 @@ surveys_df.head()
 What is the difference between the two data frames?
 
 ## Referencing Objects vs Copying Objects in Python
-We might have thought that we were creating a fresh copy of the `surveys_df` objects when we 
-used the code `surveys_copy = surveys_df`. However the statement  y = x doesn’t create a copy of our DataFrame. 
-It creates a new variable y that refers to the **same** object x refers to. This means that there is only one object 
-(the DataFrame), and both x and y refer to it. So when we assign the first 3 columns the value of 0 using the 
+We might have thought that we were creating a fresh copy of the `surveys_df` objects when we
+used the code `surveys_copy = surveys_df`. However the statement  y = x doesn’t create a copy of our DataFrame.
+It creates a new variable y that refers to the **same** object x refers to. This means that there is only one object
+(the DataFrame), and both x and y refer to it. So when we assign the first 3 columns the value of 0 using the
 `surveys_copy` DataFrame, the `surveys_df` DataFrame is modified too. To create a fresh copy of the `surveys_df`
 DataFrame we use the syntax y=x.copy(). But before we have to read the surveys_df again because the current version contains the unintentional changes made to the first 3 columns.
 
@@ -251,7 +251,7 @@ Which produces the following output:
 
 ```python
 record_id  month  day  year  plot_id species_id  sex  hindfoot_length  weight
-33320      33321      1   12  2002        1         DM    M     38      44 
+33320      33321      1   12  2002        1         DM    M     38      44
 33321      33322      1   12  2002        1         DO    M     37      58
 33322      33323      1   12  2002        1         PB    M     28      45
 33323      33324      1   12  2002        1         AB  NaN    NaN     NaN
@@ -280,7 +280,7 @@ surveys_df[(surveys_df.year >= 1980) & (surveys_df.year <= 1985)]
 
 # Python Syntax Cheat Sheet
 
-Use can use the syntax below when querying data from a DataFrame. Experiment
+Use the syntax below when querying data from a DataFrame using a logical operation. Experiment
 with selecting various subsets of the "surveys" data.
 
 * Equals: `==`
@@ -301,10 +301,39 @@ with selecting various subsets of the "surveys" data.
    to find all plots that contain particular species in
    the surveys DataFrame. How many records contain these values?
 3. Experiment with other queries. Create a query that finds all rows with a weight value > or equal to 0.
-4. The `~` symbol in Python can be used to return the OPPOSITE of the selection that you specify in python. 
+4. The `~` symbol in Python can be used to return the OPPOSITE of the selection that you specify in python.
 It is equivalent to **is not in**. Write a query that selects all rows that are NOT equal to 'M' or 'F' in the surveys
 data.
 
+```python
+# Challenge 1.
+# Select a subset of rows in `surveys_df` with
+# year == 1999 and weight values less than or equal to 8
+surveys_df[(surveys_df.year == 1999) & (surveys_df.weight <= 8)]
+
+# Challenge 2. Use isin command
+# `surveys_df[surveys_df['species_id'].isin([listGoesHere])]`
+# Find all plots that contain particular species in
+# the surveys DataFrame.
+surveys_df[(surveys_df['species_id'].isin(['RM']))]
+
+
+# How many records contain these values?
+surveys_df[(surveys_df['species_id'].isin(['RM']))].count()
+# 2609 for 'RM'
+
+# Challenge 3.
+# Experiment with other queries.
+# Create a query that finds all rows with a weight value > or equal to 0.
+surveys_df[surveys_df.weight >= 0]
+
+# Challenge 4.
+# The `~` symbol in Python can be used to return the OPPOSITE of the selection that you specify in python.
+# It is equivalent to **is not in**. Write a query that selects all rows that are NOT equal to 'M' or 'F' in the surveys
+# data.
+surveys_df[~(surveys_df['sex'].isin(['F','M']))]
+
+```
 
 # Using Masks
 
@@ -353,13 +382,15 @@ A snippet of the output is below:
 [35549 rows x 9 columns]
 ```
 
-To select the rows where there are null values,  we can use 
+To select the rows where there are null values,  we can use
 the mask as an index to subset our data as follows:
 
 ```python
 #To select just the rows with NaN values, we can use the .any method
 surveys_df[pd.isnull(surveys_df).any(axis=1)]
 ```
+[any() command](https://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.any.html)
+Test whether any array element along a given axis evaluates to True.
 
 Note that there are many null or NaN values in the `weight` column of our DataFrame.
 We will explore different ways of dealing with these in Lesson 03.
@@ -368,7 +399,7 @@ We can run `isnull` on a particular column too. What does the code below do?
 
 ```python
 # what does this do?
-empty_weights = surveys_df[pd.isnull(surveys_df['weight'])]['weight']
+empty_weights = surveys_df[pd.isnull(surveys_df['weight'])]
 ```
 
 Let's take a minute to look at the statement above. We are using the Boolean
@@ -385,3 +416,40 @@ for weight.
    or female and where weight values are greater than 0. Create a stacked bar
    plot of average weight by plot with male vs female values stacked for each
    plot.
+
+```Python
+
+# 1. Create a new DataFrame that only contains observations with sex values that
+# are **not** female or male. Assign each sex value in the new DataFrame to a
+# new value of 'x'. Determine the number of null values in the subset.
+new_df = surveys_df[~((surveys_df['sex']).isin(['M','F']))].copy()
+new_df.count()
+new_df.head()
+new_df.sex='x'
+new_df.head()
+# count null values
+pd.isnull(new_df).sum()
+pd.isnull(new_df).sum().sum()
+
+# find where null values are
+pd.isnull(new_df).any()
+pd.isnull(new_df).any(axis=1)
+
+# 2. Create a new DataFrame that contains only observations that are of sex male
+# or female and where weight values are greater than 0. Create a stacked bar
+# plot of average weight by plot with male vs female values stacked for each
+# plot.
+new_df2 = surveys_df[((surveys_df['sex']=='M') | (surveys_df['sex']=='F')) & ((surveys_df['weight'] > 0))].copy()
+new_df2.head()
+
+# or
+new_df3=surveys_df[(surveys_df['sex'].isin(['M','F']) & (surveys_df['weight'] > 0))].copy()
+
+by_plot_sex = new_df2.groupby(['plot_id','sex'])
+plot_sex_count = by_plot_sex['weight'].mean()
+spc = plot_sex_count.unstack()
+s_plot = spc.plot(kind='bar',stacked=True,title="Total weight by plot and sex")
+s_plot.set_ylabel("Weight")
+s_plot.set_xlabel("Plot")
+
+```
