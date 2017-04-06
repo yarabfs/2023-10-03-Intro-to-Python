@@ -25,17 +25,16 @@ permalink: /resources/
 
 **PANDAS**
   * [\*\*Pandas Cheatsheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
-
-**GGPLOT**
-  * [ggplot reference](http://ggplot.yhathq.com/)
-  * [plots reference](http://ggplot.yhathq.com/docs/index.html)
-
   * [Pandas Library Main Page](http://pandas.pydata.org/)
   * [API documentation](http://pandas.pydata.org/pandas-docs/stable/api.html)
   * [Pandas Documentation](http://pandas.pydata.org/pandas-docs/stable/)
   * [Pandas DataFrame](http://pandas.pydata.org/pandas-docs/stable/dsintro.html)
   * [Handling missing data](https://www.oreilly.com/learning/handling-missing-data)
 
+**GGPLOT**
+  * [ggplot reference](http://ggplot.yhathq.com/)
+  * [plots reference](http://ggplot.yhathq.com/docs/index.html)
+  
 ### General Data Science Resources
 
   * [50+ Data Science Cheat Sheets - KDnuggets](http://www.kdnuggets.com/2015/07/good-data-science-machine-learning-cheat-sheets.html)
