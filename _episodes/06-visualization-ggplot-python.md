@@ -13,6 +13,8 @@ objectives:
     - Use the `facet_wrap` and `facet_grid` commands to create a collection of plots splitting the data by a factor variable
     - Be able to create customized plot styles to meet their needs
 ---
+## Data Download
+- [surveys_complete.csv](https://raw.githubusercontent.com/TheJacksonLaboratory/python-ecology-lesson/gh-pages/data_output/surveys_complete.csv)
 
 ## Disclaimer
 
@@ -24,8 +26,7 @@ structured data based on the R implementation of
 Graphics](http://link.springer.com/book/10.1007%2F0-387-28695-0) by Leland
 Wilkinson.
 
-## Data Download
-- [surveys_complete.csv](https://raw.githubusercontent.com/TheJacksonLaboratory/python-ecology-lesson/gh-pages/data_output/surveys_complete.csv)
+
 
 ```python
 import pandas as pd
