@@ -73,8 +73,8 @@ works.
 ```python
 # read in first 10 lines of surveys table
 survey_sub = surveys_df.head(10)
-# grab the last 10 rows (minus the last one)
-survey_sub_last10 = surveys_df[-11:-1]
+# grab the last 10 rows
+survey_sub_last10 = surveys_df[-10:]
 #reset the index values to the second dataframe appends properly
 survey_sub_last10=survey_sub_last10.reset_index(drop=True)
 # drop=True option avoids adding new index column with old index values
