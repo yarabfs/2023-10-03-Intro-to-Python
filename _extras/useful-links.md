@@ -26,6 +26,9 @@ permalink: /resources/
 **PANDAS**
   * [\*\*Pandas Cheatsheet](https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf)
 
+**GGPLOT**
+  * [ggplot reference](http://ggplot.yhathq.com/)
+  * [plots reference](http://ggplot.yhathq.com/docs/index.html)
 
   * [Pandas Library Main Page](http://pandas.pydata.org/)
   * [API documentation](http://pandas.pydata.org/pandas-docs/stable/api.html)
