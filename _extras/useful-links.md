@@ -6,6 +6,11 @@ permalink: /resources/
 
 ## Useful Links
 
+### Instructor notebooks
+
+  * [Combining DataFrames with pandas](../notebooks/merging-data.ipynb)
+  * [Data workflows and automation](../notebooks/for-loops-and-functions.ipynb))
+
 ### Python
 
   * [Python Software Foundation Webpage](https://www.python.org/)
