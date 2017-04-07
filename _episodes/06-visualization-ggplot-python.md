@@ -1275,7 +1275,7 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 > boxplot. An alternative to the boxplot is the violin plot (sometimes known as a
 > beanplot), where the shape (of the density of points) is drawn.
 >
-> - Vizualize the distribution of `weight` within each species (`species_id`).
+> - Vizualize the distribution of `weight` within each species (`species_id`). Create a boxplot to visualize the data. remember to add the title and lables
 > - Replace the box plot with a violin plot; see `geom_violin()`
 >
 > In many types of data, it is important to consider the *scale* of the
@@ -1290,44 +1290,36 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 
 ```python
 ## Challenges:
-##  Start with the boxplot we created:
-ggplot(aes(x = 'species_factor', y = 'hindfoot_length'),data = surveys_complete) + \
-    geom_jitter(alpha=0.3) + \
-        scale_x_discrete(breaks=xcodes, labels=xlabels) + \
-                         xlab('species_id') + geom_boxplot(alpha=0)
+##  1. Vizualize the distribution of `weight` within each species (`species_id`). 
+##       Create a boxplot to visualize the data. remember to add the title and lables
+ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
+     geom_boxplot() + \
+     xlab('species_id') + \
+     ylab('weights') + \
+     ggtitle('weights distribution per species')
 ```
 
 
 ```python
-##  1. Replace the box plot with a violin plot; see `geom_violin()`.
+##  2. Replace the box plot with a violin plot; see `geom_violin()`.
 
-ggplot(aes(x = 'species_factor', y = 'hindfoot_length'),data = surveys_complete) + \
-    geom_jitter(alpha=0.3) + \
-        scale_x_discrete(breaks=xcodes, labels=xlabels) + \
-                         xlab('species_id') + geom_violin(alpha=0)
+ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
+     geom_violin() + \
+     xlab('species_id') + \
+     ylab('weights') + \
+     ggtitle('weights distribution per species')
 ```
 
 
 ```python
-##  2. Represent weight on the log10 scale; see `scale_y_log10()`.
-ggplot(aes(x = 'species_factor', y = 'hindfoot_length'),data = surveys_complete) + \
-    geom_jitter(alpha=0.3) + \
-        scale_x_discrete(breaks=xcodes, labels=xlabels) + \
-                         xlab('species_id') + geom_violin(alpha=0) + \
-            scale_y_log(base=10)
+##  3. Represent weight on the log10 scale; see `scale_y_log10()`.
+ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
+     geom_violin() + \
+     xlab('species_id') + \
+     ylab('weights') + \
+     ggtitle('weights distribution per species') +\
+     scale_y_log(base=10)
 ```
-
-
-```python
-##  3. Create boxplot for `hindfoot_length`.
-ggplot(aes(x = 'species_factor', y = 'hindfoot_length'),data = surveys_complete) + \
-    geom_jitter(alpha=0.01) + \
-        scale_x_discrete(breaks=xcodes, labels=xlabels) + \
-                         xlab('species_id') + geom_boxplot(alpha=0) + \
-            scale_y_log(base=10)
-            
-```
-
 
 
 
