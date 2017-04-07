@@ -9,7 +9,7 @@ permalink: /resources/
 ### Instructor notebooks
 
   * [Combining DataFrames with pandas](../notebooks/merging-data.ipynb)
-  * [Data workflows and automation](../notebooks/for-loops-and-functions.ipynb))
+  * [Data workflows and automation](../notebooks/for-loops-and-functions.ipynb)
 
 ### Python
 
