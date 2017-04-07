@@ -1054,23 +1054,6 @@ surveys_complete
       <td>baileyi</td>
       <td>Rodent</td>
       <td>Rodent Exclosure</td>
-    </tr>
-  </tbody>
-</table>
-<p>30463 rows × 13 columns</p>
-</div>
-
-
-
-
-```python
-%matplotlib inline
-from ggplot import *
-```
-
-
-# Plotting with ggplot
-
 We will make the same plot using the `ggplot` package.
 
 `ggplot` is a plotting package that makes it simple to create complex plots
@@ -1093,6 +1076,23 @@ To build a ggplot we need to:
 
 
 ```python
+    </tr>
+  </tbody>
+</table>
+<p>30463 rows × 13 columns</p>
+</div>
+
+
+
+
+```python
+%matplotlib inline
+from ggplot import *
+```
+
+
+# Plotting with ggplot
+
 ggplot( aesthetics= aes(x = 'weight', y = 'hindfoot_length'), data = surveys_complete)
 ```
 
@@ -1260,7 +1260,7 @@ ggplot(aes(x = 'weight', y = 'hindfoot_length', color='species_id'),data = surve
 
 # Challenge
 
-Visualising the distribution of weight within each species.
+Visualising the distribution of `weight` and `hindfoot_length` within each species.
 
 
 ```python
@@ -1270,14 +1270,12 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 
 ![png](../fig/output_21_0.png)
 
-
-## Challenges
-
 > Boxplots are useful summaries, but hide the *shape* of the distribution. For
 > example, if there is a bimodal distribution, this would not be observed with a
 > boxplot. An alternative to the boxplot is the violin plot (sometimes known as a
 > beanplot), where the shape (of the density of points) is drawn.
 >
+> - Vizualize the distribution of `weight` within each species (`species_id`).
 > - Replace the box plot with a violin plot; see `geom_violin()`
 >
 > In many types of data, it is important to consider the *scale* of the
@@ -1287,15 +1285,6 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 > incrementally adding commands).
 >
 > - Represent weight on the log10 scale; see `scale_y_log10()`
->
-> - Create boxplot for `hindfoot_length`.
->
-> - Add color to the datapoints on your boxplot according to the plot from which
->   the sample was taken (`plot_id`)
-
-Hint: Check the class for `plot_id`. Consider changing the class of `plot_id`
-from integer to factor. Why does this change how R makes the graph?
-
 
 
 
@@ -1339,21 +1328,6 @@ ggplot(aes(x = 'species_factor', y = 'hindfoot_length'),data = surveys_complete)
             
 ```
 
-
-```python
-##  4. Add color to the datapoints on your boxplot according to the
-##  plot from which the sample was taken (`plot_id`).
-##  Hint: Check the class for `plot_id`. Consider changing the class
-##  of `plot_id` from integer to factor. Why does this change how R
-##  makes the graph?
-
-ggplot(aes(x = 'species_factor', y = 'hindfoot_length', color='plot_id'),data = surveys_complete) + \
-    geom_jitter(alpha=0.01) + \
-        scale_x_discrete(breaks=xcodes, labels=xlabels) + \
-                         xlab('species_id') + geom_boxplot(alpha=0) + \
-            scale_y_log(base=10)
-     
-```
 
 
 
