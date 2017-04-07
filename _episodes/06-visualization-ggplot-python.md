@@ -1242,9 +1242,6 @@ Or to color each species in the plot differently:
 
 
 ```python
-# ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) +
-#    geom_point(alpha = 0.1, aes(color=species_id))
-
 ggplot(aes(x = 'weight', y = 'hindfoot_length', color='species_id'),data = surveys_complete) + \
     geom_point( alpha = 0.1)
 ```
@@ -1261,7 +1258,7 @@ ggplot(aes(x = 'weight', y = 'hindfoot_length', color='species_id'),data = surve
 
 
 
-# Boxplot
+# Challenge
 
 Visualising the distribution of weight within each species.
 
@@ -1273,37 +1270,6 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 
 ![png](../fig/output_21_0.png)
 
-
-
-
-
-    <ggplot: (-9223372036559103053)>
-
-
-
-
-By adding points to boxplot, we can have a better idea of the number of
-measurements and of their distribution:
-
-
-```python
-surveys_complete['species_factor'] = surveys_complete['species_id'].astype('category').cat.codes
-
-
-xlabels = sorted(set(surveys_complete['species_id'].values) )
-xcodes = sorted(set(surveys_complete['species_factor'].values))
-
-ggplot(aes(x = 'species_factor', y = 'hindfoot_length'),data = surveys_complete) + \
-    geom_point(position='jitter',alpha=0.7,jittersize=0.4) + \
-        scale_x_continuous(breaks=xcodes, labels=xlabels) + \
-                         xlab('species_id') + geom_boxplot(alpha=0)
-
-```
-
-
-Notice how the boxplot layer is behind the jitter layer? What do you need to
-change in the code to put the boxplot in front of the points such that it's not
-hidden.
 
 ## Challenges
 
@@ -1885,19 +1851,6 @@ Usually plots with white background look more readable when printed.  We can set
 the background to white using the function `theme_bw()`. Additionally you can also remove
 the grid.
 
-
-
-
-```python
- ggplot(data = yearly_sex_counts, aes(x = year, y = n, color = species_id, group = sex)) +
-     geom_line() +
-     facet_wrap(~ species_id) +
-     theme_bw() +
-     theme(panel.grid.major.x = element_blank(),
-	   panel.grid.minor.x = element_blank(),
-	   panel.grid.major.y = element_blank(),
-	   panel.grid.minor.y = element_blank())
-```
 
 
 ```python
