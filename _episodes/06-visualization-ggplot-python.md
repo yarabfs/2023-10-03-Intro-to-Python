@@ -1093,6 +1093,7 @@ from ggplot import *
 
 # Plotting with ggplot
 
+```python
 ggplot( aesthetics= aes(x = 'weight', y = 'hindfoot_length'), data = surveys_complete)
 ```
 
@@ -1185,12 +1186,6 @@ ggplot(aes(x = 'weight', y = 'hindfoot_length'), data = surveys_complete, ) + ge
 
 
 
-
-    <ggplot: (-9223372036581788156)>
-
-
-
-
 Then, we start modifying this plot to extract more information from it. For
 instance, we can add transparency (alpha) to avoid overplotting.
 
@@ -1226,15 +1221,6 @@ ggplot(aes(x = 'weight', y = 'hindfoot_length'),data = surveys_complete) + \
 
 
 ![png](../fig/output_16_0.png)
-
-
-
-
-
-    <ggplot: (291993969)>
-
-
-
 
 Or to color each species in the plot differently:
 
