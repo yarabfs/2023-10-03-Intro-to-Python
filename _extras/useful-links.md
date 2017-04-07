@@ -8,6 +8,8 @@ permalink: /resources/
 
 ### Instructor notebooks
 
+
+  * [Slicing Data and NaNs](https://github.com/TheJacksonLaboratory/python-ecology-lesson/tree/gh-pages/notebooks/slicing_data.ipynb)
   * [Combining DataFrames with pandas](https://github.com/TheJacksonLaboratory/python-ecology-lesson/tree/gh-pages/notebooks/merging-data.ipynb)
   * [Data workflows and automation](https://github.com/TheJacksonLaboratory/python-ecology-lesson/tree/gh-pages/notebooks/for-loops-and-functions.ipynb)
 
