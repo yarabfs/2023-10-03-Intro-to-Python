@@ -8,8 +8,8 @@ permalink: /resources/
 
 ### Instructor notebooks
 
-  * [Combining DataFrames with pandas](../notebooks/merging-data.ipynb)
-  * [Data workflows and automation](../notebooks/for-loops-and-functions.ipynb)
+  * [Combining DataFrames with pandas](https://github.com/TheJacksonLaboratory/python-ecology-lesson/tree/gh-pages/notebooks/merging-data.ipynb)
+  * [Data workflows and automation](https://github.com/TheJacksonLaboratory/python-ecology-lesson/tree/gh-pages/notebooks/for-loops-and-functions.ipynb)
 
 ### Python
 
