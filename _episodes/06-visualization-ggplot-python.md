@@ -1284,7 +1284,7 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 > of the axes is done similarly to adding/modifying other components (i.e., by
 > incrementally adding commands).
 >
-> - Represent weight on the log10 scale; see `scale_y_log()`
+> - Represent weight on the log10 scale; see `scale_y_log(base=10)`
 
 
 
@@ -1301,6 +1301,7 @@ ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
 
 
 ```python
+## Challenges:
 ##  2. Replace the box plot with a violin plot; see `geom_violin()`.
 
 ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
@@ -1312,6 +1313,7 @@ ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
 
 
 ```python
+## Challenges:
 ##  3. Represent weight on the log10 scale; see `scale_y_log()`.
 ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
      geom_violin() + \
@@ -1328,14 +1330,6 @@ ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
 Let's calculate number of counts per year for each species. To do that we need
 to group data first and count records within each group.
 
-
-
-
-```python
-#yearly_counts <- surveys_complete %>%
-                 group_by(year, species_id) %>%
-                 tally
-```
 
 
 ```python
