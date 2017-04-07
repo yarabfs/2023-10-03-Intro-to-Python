@@ -54,4 +54,4 @@ permalink: /resources/
   * [Think Python](http://greenteapress.com/wp/think-python/)
   * [Dive Into Python](http://www.diveintopython.net/)
   * [A Whirlwind Tour of Python](https://www.oreilly.com/learning/a-whirlwind-tour-of-python)
-
+  * [Python Docs Tutorial](https://docs.python.org/3/tutorial/index.html)
