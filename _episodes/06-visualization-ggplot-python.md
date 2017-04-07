@@ -1284,7 +1284,7 @@ ggplot( aes(x = 'species_id', y = 'hindfoot_length'), data = surveys_complete) +
 > of the axes is done similarly to adding/modifying other components (i.e., by
 > incrementally adding commands).
 >
-> - Represent weight on the log10 scale; see `scale_y_log10()`
+> - Represent weight on the log10 scale; see `scale_y_log()`
 
 
 
@@ -1312,11 +1312,11 @@ ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
 
 
 ```python
-##  3. Represent weight on the log10 scale; see `scale_y_log10()`.
+##  3. Represent weight on the log10 scale; see `scale_y_log()`.
 ggplot( aes(x = 'species_id', y = 'weight'), data = surveys_complete) + \
      geom_violin() + \
      xlab('species_id') + \
-     ylab('weights') + \
+     ylab('weights base 10') + \
      ggtitle('weights distribution per species') +\
      scale_y_log(base=10)
 ```
