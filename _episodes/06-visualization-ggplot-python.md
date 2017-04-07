@@ -1054,6 +1054,13 @@ surveys_complete
       <td>baileyi</td>
       <td>Rodent</td>
       <td>Rodent Exclosure</td>
+    </tr>
+  </tbody>
+</table>
+<p>30463 rows × 13 columns</p>
+</div>
+
+
 We will make the same plot using the `ggplot` package.
 
 `ggplot` is a plotting package that makes it simple to create complex plots
@@ -1067,20 +1074,12 @@ To build a ggplot we need to:
 - bind the plot to a specific data frame using the `data` argument
 
 
-
-
 - define aesthetics (`aes`), by selecting the variables to be plotted and the variables to define the presentation
      such as plotting size, shape color, etc.,
 
 
 
 
-```python
-    </tr>
-  </tbody>
-</table>
-<p>30463 rows × 13 columns</p>
-</div>
 
 
 
