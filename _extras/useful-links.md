@@ -8,7 +8,7 @@ permalink: /resources/
 
 ### Instructor notebooks
 
-  * [How To Download and Use Instructor Notebooks](https://thejacksonlaboratory.github.io/python-ecology-lesson/resources/notebooks)
+  * [How To Download and Use Instructor Notebooks](https://thejacksonlaboratory.github.io/python-ecology-lesson/usenotebook/)
 
 
   * [Slicing Data and NaNs](https://github.com/TheJacksonLaboratory/python-ecology-lesson/tree/gh-pages/notebooks/slicing_data.ipynb)
