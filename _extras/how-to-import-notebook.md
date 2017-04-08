@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "How to open instructor notebooks"
-permalink: /resources/notebooks/
+permalink: /usenotebook/
 ---
 
 ## How to download and open instructor notebooks
