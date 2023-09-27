@@ -15,6 +15,10 @@ maintainers:
   - John Gosset
   - Mateusz Kuzak
 
+instructors:
+- Yara Abu Awad
+- Christopher Sulkowski
+
 software: Python
 ---
 
@@ -24,8 +28,7 @@ software: Python
 
 Data Carpentry's aim is to teach researchers basic concepts, skills, and tools
 for working with data so that they can get more done in less time, and with less
-pain. The lessons below were designed for those interested in working with
-ecological data in Python.
+pain. The lessons below were adapted to give you an introduction to Python.
 
 
 ## Lessons
@@ -36,9 +39,6 @@ ecological data in Python.
 - [Data Types and Format](03-data-types-and-format)
 - [Merging Data](04-merging-data)
 - [Data Analysis Automation: Loops and Functions](05-loops-and-functions)
-- [Plotting with ggplot](06-visualization-ggplot-python)
-- [Putting It All Together](07-putting-it-all-together)
-- [Accessing SQL using Python](08-working-with-sql)
 
 
 ## Data
@@ -64,17 +64,6 @@ To most effectively use these materials, please make sure to install everything
 
 Participants are required to abide by Data Carpentry's
 [Code of Conduct](http://www.datacarpentry.org/code-of-conduct/).
-
-
-{% if page.software == "Python" %}
-{% include pythonSetup.html %}
-{% elsif page.software == "Spreadsheets" %}
-{% include spreadsheetSetup.html %}
-{% elsif page.software == "R" %}
-{% include rSetup.html %}
-{% else %}
-{% include anySetup.html %}
-{% endif %}
 
 
 ## Acknowledgements & Support
