@@ -15,16 +15,14 @@ maintainers:
   - John Gosset
   - Mateusz Kuzak
 
-instructors:
-- Yara Abu Awad
-- Christopher Sulkowski
-
 software: Python
 ---
 
 **Content Contributors:** {{ page.contributors | join: ', ' }}
 
 **Lesson Maintainers:** {{ page.maintainers | join: ', ' }}
+
+**Course Instructors:** Yara Abu Awad and Chris Sulkowski
 
 Data Carpentry's aim is to teach researchers basic concepts, skills, and tools
 for working with data so that they can get more done in less time, and with less
