@@ -29,16 +29,6 @@ for working with data so that they can get more done in less time, and with less
 pain. The lessons below were adapted to give you an introduction to Python.
 
 
-## Lessons
-
-- [Short Introduction to Python](00-short-introduction-to-Python)
-- [Starting With Data](01-starting-with-data)
-- [Index Slice Subset](02-index-slice-subset)
-- [Data Types and Format](03-data-types-and-format)
-- [Merging Data](04-merging-data)
-- [Data Analysis Automation: Loops and Functions](05-loops-and-functions)
-
-
 ## Data
 
 Data for this lesson is from the Portal Project Teaching Database -
@@ -50,6 +40,8 @@ Specifically, the data files we use in these lessons are:
 - [species.csv](https://ndownloader.figshare.com/files/3299483)
 - [surveys_complete.csv](https://github.com/TheJacksonLaboratory/python-ecology-lesson/raw/gh-pages/data_output/surveys_complete.csv)
 
+## Workshop etherpad
+[Link](https://etherpad.wikimedia.org/p/2023-10-03-Intro-to-Python) to share solutions and notes.
 
 ## Requirements
 
