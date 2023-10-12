@@ -125,7 +125,8 @@ new_output = pd.read_csv('out.csv', keep_default_na=False, na_values=[""])
 
 ## Challenge
 
-In the data folder, there are two survey data files: `survey2001.csv` and
+In the [data folder](https://github.com/yarabfs/2023-10-03-Intro-to-Python/tree/gh-pages/data), 
+there are two survey data files: `survey2001.csv` and
 `survey2002.csv`. Read the data into python and combine the files to make one
 new data frame. Create a plot of average plot weight by year grouped by sex.
 Export your results as a CSV and make sure it reads back into python properly.
