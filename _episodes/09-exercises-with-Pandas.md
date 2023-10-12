@@ -1,7 +1,7 @@
 ---
 title: Exercises with Pandas
 teaching: 0
-exercises: 1 hour 45 min
+exercises: 1 hour 45
 objectives:
     - Importing necessary libraries to manipulate data
     - Use Pandas to read data from excel
